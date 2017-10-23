@@ -25,7 +25,7 @@ import static org.hamcrest.Matchers.allOf;
  * @author Piotr Zawadzki
  */
 @LargeTest
-public class SetButtonColorProgrammaticallyActivityTest extends AbstractActivityTest<SetButtonColorProgrammaticallyActivity> {
+public class SetButtonColorProgrammaticallyActivityTest extends AbstractActivityTest<StyledProgrammaticallyActivity> {
 
     @Test
     public void shouldStayOnTheFirstStepWhenVerificationFails() {

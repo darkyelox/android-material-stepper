@@ -77,7 +77,7 @@ class MainActivity : AppCompatActivity() {
                 SampleItem(getString(R.string.disabled_tab_navigation), getString(R.string.disabled_tab_navigation_description), DisabledTabNavigationActivity::class.java),
                 SampleItem(getString(R.string.hidden_bottom_navigation), getString(R.string.hidden_bottom_navigation_description), HiddenBottomNavigationActivity::class.java),
                 SampleItem(getString(R.string.custom_stepperlayout_theme), getString(R.string.custom_stepperlayout_theme_description), CustomStepperLayoutThemeActivity::class.java),
-                SampleItem(getString(R.string.set_button_color_programmatically), getString(R.string.set_button_color_programmatically_description), SetButtonColorProgrammaticallyActivity::class.java)
+                SampleItem(getString(R.string.set_styles_programmatically), getString(R.string.set_styles_programmatically_description), StyledProgrammaticallyActivity::class.java)
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SampleItemViewHolder {

@@ -649,6 +649,61 @@ public class StepperLayout extends LinearLayout implements TabsContainer.TabItem
     }
 
     /**
+     * Changes the color for an active step, applied to dotted or progress bars
+     *
+     * @param newActiveStepColor the active step color integer
+     */
+    public void setActiveStepColor(@ColorInt int newActiveStepColor) {
+        mSelectedColor = newActiveStepColor;
+        mDottedProgressBar.setSelectedColor(newActiveStepColor);
+        mProgressBar.setProgressColor(newActiveStepColor);
+    }
+
+    /**
+     * Changes the color for an inactive step, applied to dotted or progress bars
+     *
+     * @param newInactiveStepColor the inactive step color integer
+     */
+    public void setInactiveStepColor(@ColorInt int newInactiveStepColor) {
+        mUnselectedColor = newInactiveStepColor;
+        mDottedProgressBar.setUnselectedColor(newInactiveStepColor);
+        mProgressBar.setProgressBackgroundColor(newInactiveStepColor);
+    }
+
+    /**
+     * Changes the bottom navigation background using a drawable resource
+     *
+     * @param newBottomNavigationBackground the drawable resource id
+     */
+    public void setBottomNavigationBackground(@DrawableRes int newBottomNavigationBackground){
+        mBottomNavigationBackground = newBottomNavigationBackground;
+        mStepNavigation.setBackgroundResource(mBottomNavigationBackground);
+    }
+
+    /**
+     * Changes the bottom navigation background using a drawable
+     *
+     * @param newBottomNavigationBackground the drawable
+     */
+    public void setBottomNavigationBackground(@NonNull Drawable newBottomNavigationBackground){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            mStepNavigation.setBackground(newBottomNavigationBackground);
+        }else {
+            mStepNavigation.setBackgroundDrawable(newBottomNavigationBackground);
+        }
+    }
+
+    /**
+     * Changes the bottom navigation background color
+     *
+     * @param newBottomNavigationBackground the color integer
+     */
+    public void setBottomNavigationBackgroundColor(@ColorInt int newBottomNavigationBackground){
+        mStepNavigation.setBackgroundColor(newBottomNavigationBackground);
+    }
+
+
+    /**
      * Updates the error state in the UI.
      * It does nothing if showing error state is disabled.
      * This is used internally to show the error on tabs.

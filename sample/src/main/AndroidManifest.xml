@@ -53,7 +53,7 @@
         <activity
             android:name=".CustomStepperLayoutThemeActivity"
             android:theme="@style/AppThemeDark" />
-        <activity android:name=".SetButtonColorProgrammaticallyActivity" />
+        <activity android:name=".StyledProgrammaticallyActivity" />
     </application>
 
 </manifest>

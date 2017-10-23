@@ -9,10 +9,22 @@ import butterknife.BindColor
 /**
  * @author Piotr Zawadzki
  */
-class SetButtonColorProgrammaticallyActivity : AbstractStepperActivity() {
+class StyledProgrammaticallyActivity : AbstractStepperActivity() {
 
     @BindColor(R.color.ms_custom_button_text_color)
     lateinit var customButtonColor: ColorStateList
+
+    @BindColor(R.color.custom_active_step_color)
+    @JvmField
+    var customActiveStepColor: Int = 0
+
+    @BindColor(R.color.custom_inactive_step_color)
+    @JvmField
+    var customInactiveStepColor: Int = 0
+
+    @BindColor(R.color.custom_bottom_navigation_background_color)
+    @JvmField
+    var customBottomNativationBackgroundColor: Int = 0
 
     @ColorInt
     @JvmField
@@ -24,9 +36,14 @@ class SetButtonColorProgrammaticallyActivity : AbstractStepperActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        stepperLayout.setNextButtonColor(customButtonColor)
-        stepperLayout.setBackButtonColor(customButtonColor)
-        stepperLayout.setCompleteButtonColor(customButtonColor)
+        with(stepperLayout) {
+            setNextButtonColor(customButtonColor)
+            setBackButtonColor(customButtonColor)
+            setCompleteButtonColor(customButtonColor)
+            setActiveStepColor(customActiveStepColor)
+            setInactiveStepColor(customInactiveStepColor)
+            setBottomNavigationBackgroundColor(customBottomNativationBackgroundColor)
+        }
     }
 
     override fun onStepSelected(newStepPosition: Int) {

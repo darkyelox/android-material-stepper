@@ -270,11 +270,11 @@ public class SanityTest extends AbstractActivityTest<MainActivity> {
     @Test
     public void shouldOpenSetButtonColorProgrammaticallyActivity() {
         //when
-        clickRowWithText(R.string.set_button_color_programmatically);
+        clickRowWithText(R.string.set_styles_programmatically);
 
         //then
-        intended(hasComponent(SetButtonColorProgrammaticallyActivity.class.getName()));
-        SpoonScreenshotAction.perform(getScreenshotTag(25, R.string.set_button_color_programmatically));
+        intended(hasComponent(StyledProgrammaticallyActivity.class.getName()));
+        SpoonScreenshotAction.perform(getScreenshotTag(25, R.string.set_styles_programmatically));
     }
 
     @NonNull
